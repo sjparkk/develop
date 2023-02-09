@@ -11,6 +11,22 @@ class UriTest {
 
     private var target = "https://www.google.com/search?q=java+uri+url&oq=java+uri+url"
 
+
+    @Test
+    fun `hostname 만 가지고 오는 정규식 및 URI 조합 `() {
+
+        //정규식으로 가지고 오는 방법
+        val results = Regex("^(?:\\w+://)?((?:[^./?#]+\\.)?([^/?#]+))").find(target)
+        println(results?.groupValues)
+        Assertions.assertEquals(results?.groupValues?.get(0), "https://www.google.com")
+        Assertions.assertEquals(results?.groupValues?.get(1), "www.google.com")
+        Assertions.assertEquals(results?.groupValues?.get(2), "google.com")
+
+        //URI 사용
+        val result = "${URL(target).protocol}://${URL(target).host}"
+        Assertions.assertEquals(result, "https://www.google.com")
+    }
+
     @Test
     fun `url 형식 안 맞을 시 MalformedURLException 발생`() {
         Assertions.assertThrows(MalformedURLException::class.java) {
