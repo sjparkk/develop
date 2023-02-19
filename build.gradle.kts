@@ -20,6 +20,21 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    //gson
+    implementation("com.google.code.gson:gson:2.8.8")
+
+    //SXSSFWorkbook
+    implementation("org.apache.poi:poi:5.0.0")
+    implementation("org.apache.poi:poi-ooxml:5.0.0")
+
+    //StringUtils
+    implementation("org.apache.commons:commons-lang3:3.12.0")
+
+    implementation("commons-io:commons-io:2.8.0")
+
+    implementation("eu.bitwalker:UserAgentUtils:1.21")
 }
 
 tasks.withType<KotlinCompile> {
