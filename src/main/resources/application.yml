@@ -1,3 +1,6 @@
 
+server:
+  port: 9001
+
 crypto:
   key: key-12#$%2-sjparkkaes256-gcmcryp
