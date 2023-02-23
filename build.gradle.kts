@@ -35,6 +35,8 @@ dependencies {
     implementation("commons-io:commons-io:2.8.0")
 
     implementation("eu.bitwalker:UserAgentUtils:1.21")
+
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
 
 tasks.withType<KotlinCompile> {
