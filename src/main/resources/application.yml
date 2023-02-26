@@ -19,3 +19,26 @@ spring:
     username: root
     password: root
 
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: com.vladmihalcea.hibernate.type.util.CamelCaseToSnakeCaseNamingStrategy
+    properties:
+      hibernate:
+        #        format_sql: true
+        default_batch_fetch_size: 100
+        #        jdbc:
+        #          batch_size: 100
+        #          batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+    database: mysql
+#    database-platform: com.sellermill.common.config.MySQLCustomDialect
+
+binding:
+  language:
+    a: test1
+    b: test2
+    c: test3
