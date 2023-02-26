@@ -4,3 +4,12 @@ server:
 
 crypto:
   key: key-12#$%2-sjparkkaes256-gcmcryp
+
+
+spring:
+  servlet:
+    multipart:
+      # 멀티파트 업로드 지원여부 (default: true)
+      enabled: true
+      ## 파일의 최대 사이즈 (default: 1MB) 파일당 최대 파일 크기
+      max-file-size: 50MB
