@@ -1,7 +1,7 @@
 package com.example.develop.excel.controller
 
-import com.example.develop.component.excel.dto.ReqExcelDownloadDTO
-import com.example.develop.component.excel.service.ExcelService
+import com.example.develop.excel.component.dto.ReqExcelDownloadDTO
+import com.example.develop.excel.component.service.ExcelService
 import com.example.develop.excel.dto.ResDataExcelDownloadDTO
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping

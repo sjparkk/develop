@@ -1,7 +1,7 @@
-package com.example.develop.component.excel.service
+package com.example.develop.excel.component.service
 
-import com.example.develop.component.excel.constant.ExcelConstant.Companion.EXCEL_XLSX_STREAMING_VIEW
-import com.example.develop.component.excel.dto.ReqExcelDownloadDTO
+import com.example.develop.excel.component.constant.ExcelConstant.Companion.EXCEL_XLSX_STREAMING_VIEW
+import com.example.develop.excel.component.dto.ReqExcelDownloadDTO
 import org.springframework.stereotype.Service
 import org.springframework.web.servlet.ModelAndView
 

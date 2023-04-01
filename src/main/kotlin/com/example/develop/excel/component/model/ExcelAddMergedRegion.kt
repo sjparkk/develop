@@ -1,4 +1,4 @@
-package com.example.develop.component.excel.model
+package com.example.develop.excel.component.model
 
 data class ExcelAddMergedRegion(
 

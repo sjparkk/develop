@@ -1,4 +1,4 @@
-package com.example.develop.component.excel.utils
+package com.example.develop.excel.component.utils
 
 import eu.bitwalker.useragentutils.Browser
 import org.apache.poi.ss.formula.eval.ErrorEval

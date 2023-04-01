@@ -1,6 +1,6 @@
-package com.example.develop.component.excel.view
+package com.example.develop.excel.component.view
 
-import com.example.develop.component.excel.service.ExcelWriter
+import com.example.develop.excel.component.service.ExcelWriter
 import org.apache.poi.ss.usermodel.Workbook
 import org.springframework.stereotype.Component
 import org.springframework.web.servlet.view.document.AbstractXlsxStreamingView

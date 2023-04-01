@@ -1,6 +1,6 @@
-package com.example.develop.component.excel.dto
+package com.example.develop.excel.component.dto
 
-import com.example.develop.component.excel.model.ExcelAddMergedRegion
+import com.example.develop.excel.component.model.ExcelAddMergedRegion
 
 data class ReqExcelDownloadDTO(
 
