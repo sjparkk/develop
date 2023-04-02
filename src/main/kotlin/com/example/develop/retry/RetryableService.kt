@@ -1,10 +1,12 @@
 package com.example.develop.retry
 
 import org.springframework.retry.annotation.Backoff
+import org.springframework.retry.annotation.Recover
 import org.springframework.retry.annotation.Retryable
 import org.springframework.stereotype.Service
 import java.lang.Math.random
 import java.time.LocalDateTime
+import java.util.NoSuchElementException
 
 /**
  * Retryable service
@@ -34,6 +36,23 @@ class RetryableService {
     fun retryByTimeDelay(): Int {
         return randomFail()
     }
+
+    @Retryable(include = [RuntimeException::class, IllegalArgumentException::class, NoSuchElementException::class])
+    fun retryBySpecificException(): Int {
+        return randomFail()
+    }
+
+    @Retryable(include = [NoSuchElementException::class])
+    fun retryByNoSuchElementException(input: String) {
+        throw NoSuchElementException()
+    }
+
+    //Recover 사용시 Exception을 제외한 나머지 인자에 대해서 타겟 메소드와 동일해야 한다. (입출력 인자)
+    @Recover
+    fun recoverByNoSuchElementException(e: NoSuchElementException, input: String) {
+        println("recover 실행")
+    }
+
 
     private fun randomFail(): Int {
         if (random() > 0.1) {
