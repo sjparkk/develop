@@ -60,6 +60,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("mysql:mysql-connector-java:8.0.27")
+
+    //retry (spring aop를 사용하므로 aspect 추가)
+    implementation("org.springframework.retry:spring-retry")
+    implementation("org.springframework:spring-aspects")
 }
 
 tasks.withType<KotlinCompile> {
