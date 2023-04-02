@@ -1,8 +1,10 @@
 package com.example.develop.retry
 
+import org.springframework.retry.annotation.Backoff
 import org.springframework.retry.annotation.Retryable
 import org.springframework.stereotype.Service
 import java.lang.Math.random
+import java.time.LocalDateTime
 
 /**
  * Retryable service
@@ -28,10 +30,16 @@ class RetryableService {
         return randomFail()
     }
 
+    @Retryable(backoff = Backoff(5000))
+    fun retryByTimeDelay(): Int {
+        return randomFail()
+    }
+
     private fun randomFail(): Int {
         if (random() > 0.1) {
             count += 1
             println("failed")
+            println(LocalDateTime.now())
             throw RuntimeException(count.toString())
         } else {
             println("success")
