@@ -56,5 +56,12 @@ class RetryableServiceTest {
         }
     }
 
+    @Test
+    @DisplayName("Recover 실행 확인")
+    fun retryByNoSuchElementException() {
+        val input = "test"
+        retryableService.retryByNoSuchElementException(input)
+    }
+
 
 }
