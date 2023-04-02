@@ -3,6 +3,7 @@ package com.example.develop
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.boot.runApplication
+import org.springframework.retry.annotation.EnableRetry
 
 /**
  * Properties Class 설정
@@ -21,6 +22,7 @@ import org.springframework.boot.runApplication
 //@EnableConfigurationProperties(BeforeBindingProperties::class)
 @SpringBootApplication
 @ConfigurationPropertiesScan
+@EnableRetry
 class DevelopApplication
 
 fun main(args: Array<String>) {
