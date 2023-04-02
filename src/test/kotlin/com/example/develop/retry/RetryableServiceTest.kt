@@ -11,6 +11,7 @@ class RetryableServiceTest {
 
     companion object {
         const val DEFAULT_RETRY_COUNT = 3
+        const val MAX_ATTEMPTS_COUNT = 5
     }
 
     @Autowired
@@ -28,5 +29,19 @@ class RetryableServiceTest {
             Assertions.assertTrue(e.message?.toInt()!! <= DEFAULT_RETRY_COUNT)
         }
     }
+
+    @Test
+    @DisplayName("@Retryable의 기본 재시도 값 maxAttempts 이하로 수행 되는지 확인")
+    fun retryByMaxAttempts() {
+        try {
+            val count = retryableService.retryByMaxAttempts()
+            println(":: 재시도 횟수 : $count")
+            Assertions.assertTrue(count <= MAX_ATTEMPTS_COUNT)
+        } catch (e: Exception) {
+            println(":: 재시도 횟수 : ${e.message} ")
+            Assertions.assertTrue(e.message?.toInt()!! <= MAX_ATTEMPTS_COUNT)
+        }
+    }
+
 
 }
