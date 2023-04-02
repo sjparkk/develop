@@ -43,5 +43,18 @@ class RetryableServiceTest {
         }
     }
 
+    @Test
+    @DisplayName("backoff 옵션을 통한 timeDelay")
+    fun retryByTimeDelay() {
+        try {
+            val count = retryableService.retryByTimeDelay()
+            println(":: 재시도 횟수 : $count")
+            Assertions.assertTrue(count <= DEFAULT_RETRY_COUNT)
+        } catch (e: Exception) {
+            println(":: 재시도 횟수 : ${e.message} ")
+            Assertions.assertTrue(e.message?.toInt()!! <= DEFAULT_RETRY_COUNT)
+        }
+    }
+
 
 }
