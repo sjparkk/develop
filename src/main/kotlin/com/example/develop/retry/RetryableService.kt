@@ -23,6 +23,11 @@ class RetryableService {
         return randomFail()
     }
 
+    @Retryable(maxAttempts = 5)
+    fun retryByMaxAttempts(): Int {
+        return randomFail()
+    }
+
     private fun randomFail(): Int {
         if (random() > 0.1) {
             count += 1
