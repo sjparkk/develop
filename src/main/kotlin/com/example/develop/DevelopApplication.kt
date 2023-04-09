@@ -3,6 +3,7 @@ package com.example.develop
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.boot.runApplication
+import org.springframework.cloud.openfeign.EnableFeignClients
 import org.springframework.retry.annotation.EnableRetry
 
 /**
@@ -23,6 +24,7 @@ import org.springframework.retry.annotation.EnableRetry
 @SpringBootApplication
 @ConfigurationPropertiesScan
 @EnableRetry
+@EnableFeignClients
 class DevelopApplication
 
 fun main(args: Array<String>) {
