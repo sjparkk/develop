@@ -64,6 +64,9 @@ dependencies {
     //retry (spring aop를 사용하므로 aspect 추가)
     implementation("org.springframework.retry:spring-retry")
     implementation("org.springframework:spring-aspects")
+
+    // feign
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign:3.1.5")
 }
 
 tasks.withType<KotlinCompile> {
