@@ -15,4 +15,18 @@ class ReplaceTest {
         Assertions.assertEquals("Hi, World!", replacedString)
     }
 
+
+    @Test
+    fun `코틀린에서 replace는 일치하는 것 모두 바꿈`() {
+        val originalString = "Hello, Hello, Hello, World!"
+        val replacedString = originalString.replace("Hello", "Hi")
+        Assertions.assertEquals("Hi, Hi, Hi, World!", replacedString)
+    }
+
+    @Test
+    fun `replace는 첫번째만 바뀌지 않음`() {
+        val originalString = "Hello, Hello, Hello, World!"
+        val replacedString = originalString.replace("Hello", "Hi")
+        Assertions.assertNotEquals("Hi, Hello, Hello, World!", replacedString)
+    }
 }
